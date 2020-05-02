@@ -20,13 +20,11 @@ def remove_padding(string):
     """ 
     return " ".join(string.split())
         
-def encrypt(plaintext:str):
+def encrypt(plaintext:str,key,iv):
     """
     This function contains code to encrypt a message.
     """
     backend = default_backend()
-    key = os.urandom(32)
-    iv = os.urandom(16)
     cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=backend)
     encryptor = cipher.encryptor()
     ct = encryptor.update(plaintext) + encryptor.finalize()
@@ -48,8 +46,11 @@ sent_message = input("Enter a string to be encrypted: ")
 padded_string = add_padding(sent_message)
 #Convert string to byte string which will be used during encryption
 byte_string = padded_string.encode()
+# Generate key and iv
+key = os.urandom(32)
+iv = os.urandom(16)
 #Encrypt the message
-key,ct,iv = encrypt(byte_string)
+ct = encrypt(byte_string,key,iv)
 print(f'key - {key} \n ct - {ct} \n iv - {iv}')
 #Decrypt the message
 decrypted_message = decrypt(key,ct,iv)
