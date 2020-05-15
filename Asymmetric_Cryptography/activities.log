@@ -1,0 +1,18 @@
+INFO:root:Generated Alice's keys
+INFO:root:Generated Bob's keys
+INFO:root:Generated the symmetric key
+INFO:root:Symmetric key sent from Alice to Bob
+INFO:root:Alice's signature verified
+INFO:root:Message encrypted
+INFO:root:Message recieved by Bob
+INFO:root:End of session
+
+INFO:root:Generated Alice's keys
+INFO:root:Generated Bob's keys
+INFO:root:Generated the symmetric key
+INFO:root:Symmetric key sent from Alice to Bob
+INFO:root:Alice's signature verified
+INFO:root:Message encrypted
+INFO:root:Message recieved by Bob
+INFO:root:End of session
+
